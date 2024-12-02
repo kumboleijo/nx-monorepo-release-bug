@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "release": {
+    "releaseTagPattern": "{projectName}@{version}",
+    "version": {
+      "conventionalCommits": true
+    },
+    "git": {
+      "commitMessage": "chore(release): {version}",
+      "commit": false,
+      "tag": false
+    },
+    "groups": {
+      "lib": {
+        "releaseTagPattern": "lib@{version}",
+        "projects": ["packages/lib"]
+      },
+      "api": {
+        "releaseTagPattern": "api@{version}",
+        "projects": ["apps/api", "packages/api-client"]
+      }
+    }
+  }
+}
